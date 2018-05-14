@@ -5,10 +5,10 @@ A project to automatically detect lane lines in a video stream from a vehicle mo
 with lane lines super imposed. Lane lines are defined by a single y = mx + b equation.
 #### Table of Contents
 1. CarND-LaneLines-P1-master: Copy of the project for modification
-2. P1.ipynb: The lane detection algorithm / pipeline
-3. /test_videos_output/: Location of completed test videos with lane markers added
-4. /reflection_images/: Images used in description of pipeline
-5. writeup.md: Writeup for project 1
+2. CarND-LaneLines-P1-master/P1.ipynb: The lane detection algorithm / pipeline
+3. CarND-LaneLines-P1-master/test_videos_output/: Location of completed test videos with lane markers added
+4. CarND-LaneLines-P1-master/reflection_images/: Images used in description of pipeline
+5. CarND-LaneLines-P1-master/writeup.md: Writeup for project 1
 #### Instructions
 1. Open in jupyter notebook
 2. Open P1

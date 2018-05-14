@@ -28,14 +28,15 @@ My pipeline consisted of 6 steps. The process will be described on this sample i
 ![alt text][RawImage]
 
 1. Perform a white / yellow color select on the image. This step will turn the image black except for any white or yellow pixels,
-which will be turned pure white [255, 255, 255].
+which will be turned pure white [255, 255, 255]. Note that this is done to handle the situation when the lane lines are close to
+the same color as the concrete / pavement.
 
 ![alt text][WY_Select]
 
 2. Perform a grayscale conversion. This doesnt change the appearance of the image, but only consolidates the 3 channel image
 down to 1 channel for use in Canny edge detection.
 
-3. Perform Canny edge detection algorithm.
+3. Perform Canny edge detection algorithm. Note that no gaussian blurring is done in order to preserve crisp color detection.
 
 ![alt text][Canny]
 
@@ -43,9 +44,9 @@ down to 1 channel for use in Canny edge detection.
 
 ![alt text][Region]
 
-5. Perform Hough Transform and select / extrapolate appropriate lines. The output lines of the Hough transform are first filtered 
-based on slope. Any slope that is "near zero" (horizontal) will be omitted. The "near zero" slope is calculated proportionally to
-the aspect ratio of the original image. Sufficiently vertical lines are then separated into right / left lane markers by slope sign.
+5. Perform Hough Transform and select / extrapolate appropriate lines i.e. draw_lines(). The output lines of the Hough transform are 
+first filtered based on slope. Any slope that is "near zero" (horizontal) will be omitted. The "near zero" slope is calculated proportionally 
+tovthe aspect ratio of the original image. Sufficiently vertical lines are then separated into right / left lane markers by slope sign.
 For a given side, the average line segment slope, center x, and center y is calculated. Average is a weight of line segment length
 (to help omit small non-continuous segments). Finally, the lane marker line (defined by average slope, average x, and average y) is
 extrapolated to the bottom of the image and to an appropriate vertical postion (near the center of the image). The final lane marker
