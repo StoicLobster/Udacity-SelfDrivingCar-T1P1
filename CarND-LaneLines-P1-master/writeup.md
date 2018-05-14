@@ -46,7 +46,7 @@ down to 1 channel for use in Canny edge detection.
 
 5. Perform Hough Transform and select / extrapolate appropriate lines i.e. draw_lines(). The output lines of the Hough transform are 
 first filtered based on slope. Any slope that is "near zero" (horizontal) will be omitted. The "near zero" slope is calculated proportionally 
-tovthe aspect ratio of the original image. Sufficiently vertical lines are then separated into right / left lane markers by slope sign.
+to the aspect ratio of the original image. Sufficiently vertical lines are then separated into right / left lane markers by slope sign.
 For a given side, the average line segment slope, center x, and center y is calculated. Average is a weight of line segment length
 (to help omit small non-continuous segments). Finally, the lane marker line (defined by average slope, average x, and average y) is
 extrapolated to the bottom of the image and to an appropriate vertical postion (near the center of the image). The final lane marker
